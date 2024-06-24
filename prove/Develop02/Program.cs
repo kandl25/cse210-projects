@@ -51,4 +51,19 @@ class Program
         }
 
     }
+    static string GetDateTime()
+    // Method to get the date and time for journal record
+    {
+        DateTime now = DateTime.Now;
+        string currentDateTime = now.ToString("F");
+        // Console.WriteLine(now.ToString("F"));
+        // Displays Saturday, March 01, 2008 7:00:00 AM
+        return currentDateTime;
+    }
+    static void AddJournalEntry()
+    // Method to add entry to text file
+    {
+        string MyJournalFile = "MyJournal.txt";
+        File.AppendAllText(MyJournalFile, "");
+    }
 }
