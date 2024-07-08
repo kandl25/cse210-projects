@@ -1,24 +1,32 @@
 using System;
 class Scripture
 {
-    private Reference _reference;
-    private List<Word> _words = new List<Word>();
+    public Reference Reference { get; private set; }
+    private List<Word> words;
+    private Random random;
 
-    public Scripture(Reference Reference, string text)
+    public Scripture(Reference reference, string text)
     {
-
+        words = text.Split(' ').Select(w => new Word(w)).ToList();
+        Reference = reference;
+        random = new Random();
     }
 
-    public void HideRandomWords(int numberToHide)
+    public void HideRandomWords()
     {
-
+        var visibleWords = words.Where(w => !w.IsHidden).ToList();
+        if (visibleWords.Any())
+        {
+            int index = random.Next(visibleWords.Count);
+            visibleWords[index].Hide();
+        }
     }
     public string GetDisplayText()
     {
-        return;
+        return string.Join(" ", words.Select(w => w.GetDisplayText()));
     }
-    public bool IsCompletelyHidden()
+    public bool AllCompletelyHidden()
     {
-
+        return words.All(w => w.IsHidden);
     }
 }

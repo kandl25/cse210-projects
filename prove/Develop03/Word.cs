@@ -1,27 +1,20 @@
 using System;
 class Word
 {
-    private string _text;
-    private bool _isHidden;
+    private string text;
+    public bool IsHidden { get; private set;}
 
     public Word(string text)
     {
-        _text = text;
+        this.text = text;
+        IsHidden = false;
     }
     public void Hide()
     {
-
-    }
-    public void Show()
-    {
-
-    }
-    public bool IsHidden()
-    {
-        return [];
+        IsHidden = true;
     }
     public string GetDisplayText()
     {
-        return [];
+        return IsHidden ? "____" : text;
     }
 }
