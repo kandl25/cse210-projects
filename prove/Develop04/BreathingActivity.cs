@@ -14,12 +14,12 @@ public class BreathingActivity : Activity
         ShowSpinner(5);
         for (int i = 0; i < 3; i++)
         {
-            Console.WriteLine("Breathe in...");
-            ShowCountDown(4);
-            Console.WriteLine("Hold...");
-            ShowCountDown(7);
-            Console.WriteLine("Breathe out...");
-            ShowCountDown(8);
+            Console.Write("Breathe in...");
+            ShowCountDown(5);
+            Console.Write("Hold...");
+            ShowCountDown(5);
+            Console.Write("Breathe out...");
+            ShowCountDown(5);
         }
         DisplayEndingMessage();
     }
