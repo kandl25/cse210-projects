@@ -6,8 +6,8 @@ namespace GoalManagement
     {
         static void Main(string[] args)
         {
-            GoalManager goalManager = new GoalManager();
-            goalManager.Start();
+            GoalManager manager = new GoalManager();
+            manager.Start();
         }
     }
 }

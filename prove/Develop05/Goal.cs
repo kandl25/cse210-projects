@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace GoalManagement
 {
     public abstract class Goal
@@ -20,5 +22,21 @@ namespace GoalManagement
             return $"{_shortName}: {_description} ({_points} points)";
         }
         public abstract string GetStringRepresentation();
+
+        public int Points => _points;
+
+        public virtual void Save(StreamWriter writer)
+        {
+            writer.WriteLine(_shortName);
+            writer.WriteLine(_description);
+            writer.WriteLine(_points);
+        }
+
+        public virtual void Load(StreamReader reader)
+        {
+            _shortName = reader.ReadLine();
+            _description = reader.ReadLine();
+            _points = int.Parse(reader.ReadLine());
+        }
     }
 }
