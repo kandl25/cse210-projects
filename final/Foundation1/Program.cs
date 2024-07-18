@@ -4,13 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Video video1 = new Video("", "", 600);
-        Video video2 = new Video("", "", 1200);
-        Video video3 = new Video("", "", 1763);
+        Video video1 = new Video("Transformed Through the Love of Jesus Christ", "Dieter F. Uchtdorf", 146);
+        Video video2 = new Video("Savior of My Soul", "Ellie Barry", 223);
+        Video video3 = new Video("Swan Lake", "Royal Ballet and Opera", 519);
 
         video1.AddComment(new Comment("Luke", "Awesome video!"));
         video1.AddComment(new Comment("Charlie", "Thanks for sharing."));
-        video1.AddComment(new Comment("Ashlan", "Very informative."));
+        video1.AddComment(new Comment("Ashlan", "Love this message."));
 
         video2.AddComment(new Comment("Branson", "Loved this video!"));
         video2.AddComment(new Comment("Jacob", "Great content!"));
